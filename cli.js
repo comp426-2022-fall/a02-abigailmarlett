@@ -10,6 +10,8 @@ var timezone = moment.tz.guess()
 var day = 1
 var jsononly = false
 
+
+//help text
 if (args.h){
     console.log(`Usage: cli.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE
     -h            Show this help message and exit.

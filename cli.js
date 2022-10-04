@@ -59,3 +59,5 @@ if (days == 0) {
   } else {
     var text = "tomorrow."
   }
+
+  var precip = data.daily.precipitation_hours[day]

@@ -27,3 +27,9 @@ if (args.n){
 if (args.s){
     var lat = args.s * -1
 }
+if (args.e){
+    var lon = args.e
+}
+if (args.w){
+    var lon = args.w * -1
+}

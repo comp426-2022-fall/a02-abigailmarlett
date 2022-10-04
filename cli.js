@@ -67,11 +67,12 @@ if (days == 0) {
     var text = "tomorrow."
   }
 
+//precipitation 
 const days = args.d 
 var precip = data.daily.precipitation_hours[day]
   
 if(prec==0){
-    console.log("You will not need your galoshes "+text)
+    console.log("You won't need your galoshes "+text)
 } else {
     console.log("You might need your galoshes "+text)
 }

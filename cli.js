@@ -22,7 +22,6 @@ if (args.h){
 
 if (args.n){
     var lat = args.n
-    
 }
 if (args.s){
     var lat = args.s * -1
@@ -61,3 +60,9 @@ if (days == 0) {
   }
 
   var precip = data.daily.precipitation_hours[day]
+  
+if(prec==0){
+    console.log("You will not need your galoshes "+text)
+} else {
+    console.log("You might need your galoshes "+text)
+}

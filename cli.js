@@ -49,3 +49,5 @@ if(jsononly){
     console.log(data)
     process.exit(0)
 }
+
+const days = args.d 

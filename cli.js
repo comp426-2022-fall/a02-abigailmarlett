@@ -51,3 +51,11 @@ if(jsononly){
 }
 
 const days = args.d 
+
+if (days == 0) {
+    var text = "today."
+  } else if (days > 1) {
+    var text = "in " + days + " days."
+  } else {
+    var text = "tomorrow."
+  }

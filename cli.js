@@ -33,3 +33,12 @@ if (args.e){
 if (args.w){
     var lon = args.w * -1
 }
+if (args.z){
+    var timezone = args.z
+}
+if (args.d){
+    var day = args.d
+}
+if (args.j){
+    var jsononly = true
+}

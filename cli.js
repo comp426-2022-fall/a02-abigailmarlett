@@ -6,7 +6,8 @@ import fetch from 'node-fetch';
 
 const args = minimist(process.argv.slice(2))
 
-var timezone = moment.tz.guess()
+//extract the system timezone
+const timezone = moment.tz.guest()
 var day = 1
 var jsononly = false
 

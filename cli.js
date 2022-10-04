@@ -42,3 +42,10 @@ if (args.d){
 if (args.j){
     var jsononly = true
 }
+
+const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lon+'&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone='+timezone+'&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum,precipitation_hours,windspeed_10m_max,windgusts_10m_max,winddirection_10m_dominant');
+const data = await response.json()
+if(jsononly){
+    console.log(data)
+    process.exit(0)
+}

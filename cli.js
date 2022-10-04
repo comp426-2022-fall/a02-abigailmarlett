@@ -19,3 +19,11 @@ if (args.h){
     -d 0-6        Day to retrieve weather: 0 is today; defaults to 1.
     -j            Echo pretty JSON from open-meteo API and exit.`)
 }
+
+if (args.n){
+    var lat = args.n
+    
+}
+if (args.s){
+    var lat = args.s * -1
+}

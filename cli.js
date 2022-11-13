@@ -65,18 +65,19 @@ if (args.d) {
 if (args.j) {
     console.log(data)
 }
+
+if (data.daily.precipitation_hours[day] > 0) {
+    console.log("You might need your galoshes")
+} 
 else {
-    if (data.daily.precipitation_hours[day] > 0) {
-        console.log("You might need your galoshes")
-    } else {
-        console.log("You will not need your galoshes")
+    console.log("You will not need your galoshes")
     }
-    if (day == 0) {
-        console.log("today.")
-    } else if (day > 1) {
-        console.log("in " + day + " days.")
-    } else {
-        console.log("tomorrow.")
+if (day == 0) {
+    console.log("today.")
+} else if (day > 1) {
+    console.log("in " + day + " days.")
+} else {
+    console.log("tomorrow.")
     }
-}
+
 

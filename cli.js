@@ -20,4 +20,49 @@ if (args.h) {
     process.exit(0);
 }
 
+if (args.z) {
+    timezone = args.z
+}
 
+let latitude = 1
+if (args.n) {
+    latitude = args.n
+} else if (args.s) {
+    latitude = -args.s
+} else {
+    console.log("Latitude must be in range")
+}
+
+let longitude = 1
+if (args.e) {
+    longitude = args.e
+} else if (args.w) {
+    longitude = -args.w
+} else {
+    console.log("Longitude must be in range")
+}
+
+const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&hourly=temperature_2m&daily=precipitation_hours&current_weather=true&timezone=' + timezone);
+const data = await response.json()
+let day = 0
+if (args.d) {
+    day = args.d
+}
+
+if (args.j) {
+    console.log(data)
+}
+else {
+    if (data.daily.precipitation_hours[day] > 0) {
+        console.log("You might need your galoshes")
+    } else {
+        console.log("You will not need your galoshes")
+    }
+    if (day == 0) {
+        console.log("today.")
+    } else if (day > 1) {
+        console.log("in " + day + " days.")
+    } else {
+        console.log("tomorrow.")
+    }
+}

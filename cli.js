@@ -66,12 +66,15 @@ if (args.j) {
     console.log(data)
 }
 
+// see if you need your galoshes 
 if (data.daily.precipitation_hours[day] > 0) {
     console.log("You might need your galoshes")
 } 
 else {
     console.log("You will not need your galoshes")
     }
+
+// what day do you need/not need them
 if (day == 0) {
     console.log("today.")
 } else if (day > 1) {

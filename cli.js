@@ -45,7 +45,12 @@ if (args.w) {
 
 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + long + '&hourly=temperature_2m&daily=precipitation_hours&current_weather=true&timezone=' + timezone);
 const data = await response.json()
-let day = 0
+
+//make day be tomorrow by default
+let day = 1
+if (args.d == 0){
+    day = 0
+}
 if (args.d) {
     day = args.d
 }

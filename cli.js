@@ -8,7 +8,7 @@ import fetch from "node-fetch";
 const args = minimist(process.argv.slice(2))
 let timezone = moment.tz.guess()
 
-
+// help message 
 if (args.h) {
     console.log("Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE")
     console.log("    -h            Show this help message and exit.")
@@ -20,6 +20,7 @@ if (args.h) {
     process.exit(0);
 }
 
+//time zone
 if (args.z) {
     timezone = args.z
 }
@@ -29,20 +30,26 @@ let lat = 1
 if (args.n) {
     lat = args.n
 } 
-if (args.s) {
+else if (args.s) {
     lat = -args.s
 } 
+else{
+    console.log("Latitude must be in range")        // fix json error
+}
 
 //checking longitude
-
 let long = 1
 if (args.e) {
     long = args.e
 } 
-if (args.w) {
+else if (args.w) {
     long = -args.w
 }
+else{
+    console.log("Longitude must be in range")       // fix json error
+}
 
+//get the data
 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + long + '&hourly=temperature_2m&daily=precipitation_hours&current_weather=true&timezone=' + timezone);
 const data = await response.json()
 

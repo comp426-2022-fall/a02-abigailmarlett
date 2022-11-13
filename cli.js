@@ -66,7 +66,8 @@ if (args.j) {
     console.log(data)
 }
 else {
-    if (data.daily.precipitation_hours[day] > 0) {
+    precip_hours = data.daily.precipitation_hours[day]
+    if (precip_hours > 0) {
         console.log("You might need your galoshes")
     } else {
         console.log("You will not need your galoshes")
